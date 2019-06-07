@@ -11,7 +11,21 @@
 
         <!-- Set the title bar of the page -->
         <title>VHS SCREENSAVER</title>
-
+        
+        document.addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    toggleFullScreen();
+  }
+}, false);
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
+}
         <!-- Set the background colour of the document -->
         <style>
             body {
